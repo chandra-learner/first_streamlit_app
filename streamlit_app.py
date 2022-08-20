@@ -1,6 +1,6 @@
 import streamlit as st
 import pandas as pd
-st.title("Welcome to Chandra's Streamlit App")
+st.title("Welcome to Chandra gopal's Streamlit App")
 st.text("How can I help you?  🥑")
 
 st.header('🍞Breakfast Menu')
