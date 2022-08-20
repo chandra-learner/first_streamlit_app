@@ -21,4 +21,4 @@ fruits_to_show = my_fruit_list.loc[fruits_selected]
 
 st.dataframe(fruits_to_show)
 
-st.line_chart(my_fruit_list)
+#st.line_chart(my_fruit_list)
