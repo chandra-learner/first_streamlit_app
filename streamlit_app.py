@@ -1,6 +1,6 @@
 import streamlit as st
 import pandas as pd
-import requests r
+import requests as r
 
 st.title("Welcome to Chandra gopal's Streamlit App")
 st.text("How can I help you?  🥑")
