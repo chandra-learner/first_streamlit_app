@@ -36,5 +36,5 @@ fruit_choice = st.text_input("What fruit information you would like to show?", "
 st.write("User Entered", fruit_choice)
 
 ft_response = r.get("https://www.fruityvice.com/api/fruit/"+fruit_choice)
-ftruityvice_normalized = pd.json_normalize(ft_response.json())
+ft_normalized = pd.json_normalize(ft_response.json())
 st.dataframe(ft_normalized)
