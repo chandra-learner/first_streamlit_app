@@ -28,3 +28,6 @@ st.header("Fruityvice Advice!!!")
 
 fruityvice_response = r.get("https://www.fruityvice.com/api/fruit/watermelon")
 st.text(fruityvice_response.json())
+
+fruityvice_normalized = pd.json_normalize(fruityvice_response.json())
+st.dataframe(fruityvice_normalized)
