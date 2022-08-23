@@ -1,5 +1,7 @@
 import streamlit as st
 import pandas as pd
+import requests r
+
 st.title("Welcome to Chandra gopal's Streamlit App")
 st.text("How can I help you?  🥑")
 
@@ -22,3 +24,6 @@ fruits_to_show = my_fruit_list.loc[fruits_selected]
 st.dataframe(fruits_to_show)
 
 #st.line_chart(my_fruit_list)
+
+fruityvice_response = r.get("https://www.fruityvice.com/api/fruit/watermelon")
+st.text(fruityvice_response)
