@@ -24,6 +24,7 @@ fruits_to_show = my_fruit_list.loc[fruits_selected]
 st.dataframe(fruits_to_show)
 
 #st.line_chart(my_fruit_list)
+st.header("Fruityvice Advice!!!")
 
 fruityvice_response = r.get("https://www.fruityvice.com/api/fruit/watermelon")
 st.text(fruityvice_response)
