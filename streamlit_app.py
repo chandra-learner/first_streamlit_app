@@ -27,4 +27,4 @@ st.dataframe(fruits_to_show)
 st.header("Fruityvice Advice!!!")
 
 fruityvice_response = r.get("https://www.fruityvice.com/api/fruit/watermelon")
-st.text(fruityvice_response)
+st.text(fruityvice_response.json())
