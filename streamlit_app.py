@@ -73,7 +73,7 @@ if st.button("Get Fruit Load List"):
   my_data_rows = get_fruit_load_list()
   st.dataframe(my_data_rows)
   
-  
+st.stop()
 fruit_choice2 = st.text_input("What fruit would you like to add?", "jackfruit")
 st.write("Thanks for adding", fruit_choice2)
 # st.text('Thanks for adding jackfruit')
