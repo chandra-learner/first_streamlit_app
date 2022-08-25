@@ -2,6 +2,7 @@ import streamlit as st
 import pandas as pd
 import requests as r
 import snowflake.connector
+import urllib.error import URLError
 
 st.title("Welcome to Chandra gopal's Streamlit App")
 st.text("How can I help you?  🥑")
@@ -33,14 +34,25 @@ fruityvice_response = r.get("https://www.fruityvice.com/api/fruit/watermelon")
 fruityvice_normalized = pd.json_normalize(fruityvice_response.json())
 st.dataframe(fruityvice_normalized)
 
-fruit_choice = st.text_input("What fruit information you would like to show?", "kiwi")
-st.write("User Entered", fruit_choice)
+# fruit_choice = st.text_input("What fruit information you would like to show?", "kiwi")
+# st.write("User Entered", fruit_choice)
 
-ft_response = r.get("https://www.fruityvice.com/api/fruit/"+fruit_choice)
-ft_normalized = pd.json_normalize(ft_response.json())
-st.dataframe(ft_normalized)
+# ft_response = r.get("https://www.fruityvice.com/api/fruit/"+fruit_choice)
+# ft_normalized = pd.json_normalize(ft_response.json())
+# st.dataframe(ft_normalized)
+try:
+  fruit_choice = st.text_input("What fruit information you would like to show?")
+  if not fruit_choice:
+    st.error("Please select a fruit to get unformation.")
+  else:
+    ft_response = r.get("https://www.fruityvice.com/api/fruit/"+fruit_choice)
+    ft_normalized = pd.json_normalize(ft_response.json())
+    st.dataframe(ft_normalized)
 
-st.stop()
+except URLError as a:
+  st.error()
+
+# st.stop()
 my_cnx = snowflake.connector.connect(**st.secrets["snowflake"])
 my_cur = my_cnx.cursor()
 # my_cur.execute("SELECT CURRENT_USER(), CURRENT_ACCOUNT(), CURRENT_REGION()")
