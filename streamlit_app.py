@@ -40,6 +40,7 @@ ft_response = r.get("https://www.fruityvice.com/api/fruit/"+fruit_choice)
 ft_normalized = pd.json_normalize(ft_response.json())
 st.dataframe(ft_normalized)
 
+st.stop()
 my_cnx = snowflake.connector.connect(**st.secrets["snowflake"])
 my_cur = my_cnx.cursor()
 # my_cur.execute("SELECT CURRENT_USER(), CURRENT_ACCOUNT(), CURRENT_REGION()")
