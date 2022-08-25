@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
 import requests as r
+import snowflake.connector
 
 st.title("Welcome to Chandra gopal's Streamlit App")
 st.text("How can I help you?  🥑")
